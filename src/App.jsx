@@ -6,7 +6,7 @@ export const App = () => {
     <div className="">
       <NavBar />
       <div className="bg-gradient-to-r from-red-500 to-yellow-400 w-full h-screen">
-      <ItemListContainer />
+      <ItemListContainer titulo={"Proximamente"} subtitulo={"Suscribete con tu correo y se el primero en enterarte"}/>
       </div>
     </div>
   )
