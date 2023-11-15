@@ -1,12 +1,23 @@
 import NavBar from "./components/NavBar"
-import ItemListContainer from "./components/ItemListContainer";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Cart from "./components/Cart";
+import About from "./components/About";
+import ItemListContainer from "./components/Item/ItemListContainer";
+import ItemDetail from "./components/ItemDetail/ItemDetail";
+
 export const App = () => {
   return (
     <div className="">
-      <NavBar />
-      <div className="bg-gradient-to-r from-red-500 to-yellow-400 w-full h-screen">
-      <ItemListContainer titulo={"Proximamente"} subtitulo={"Suscribete con tu correo y se el primero en enterarte"}/>
-      </div>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/detailitem" element={<ItemDetail />} />
+        </Routes>
+      
+      </BrowserRouter>
     </div>
   )
 }
